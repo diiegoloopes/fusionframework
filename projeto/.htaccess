@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    ##RewriteCond %{SCRIPT_FILENAME}% !-f
+    ##RewriteCond %{SCRIPT_FILENAME}% !-d
+    RewriteCond $1 !(index\.php|js|css|images|img|robots\.txt|cgi-local|cgi-bin|phpinfo\.php)
+    RewriteRule ^(.*)?$ index.php?r=$1
+    ##RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/(.*+)?$ index.php?c=$1&a=$2&p=$3 
+</IfModule>
